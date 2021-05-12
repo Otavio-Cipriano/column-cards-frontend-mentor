@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan:hsl(179, 100%, 13%);
+    --trasnparent-white: hsla(0, 0%, 100%, 0.75); /*paragraphs*/
+    --very-light-gray: hsl(0, 0%, 95%); /*backgrounds, headings, buttons*/
+}
+
+body{
+    font-family: 'Lexend deca', sans-serif;
+    font-size: 15px;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+main{
+    min-width: 40%;
+    max-width: 70%;
+    margin: auto;
+}
+
+@media (max-width: 800px) {
+    .container{
+        height: 100%;
+    }
+    main{
+        max-width: 80% !important;
+    }
+    .cards-container{
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .cards-container .card:last-child{
+        border-radius: 0 0 10px 10px !important;
+    } 
+    .cards-container .card:first-child{
+        border-radius: 10px 10px 0 0 !important;
+    }
+}
+@media (max-width: 1200px) {
+    main{
+        max-width: 80%;
+    }
+}
+
+.cards-container{
+    display: flex;
+}
+
+.card{
+    padding: clamp(2rem, 4vh, 4rem);
+    width: 100%;
+    position: relative;
+}
+
+.cards-container .card:last-child{
+    border-radius: 0 10px 10px 0;
+} 
+.cards-container .card:first-child{
+    border-radius: 10px 0 0 10px;
+}
+
+.card-icon{
+    margin: 1.5rem 0;
+}
+
+.card h3{
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-family: 'Big Shoulders Display', sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card p{
+    color: var(--trasnparent-white);
+    margin: 1rem 0;
+    margin-bottom: 10rem;
+}
+
+.card button{
+    border: none;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: clamp(0.7rem, 2vh, 1rem);
+    padding: 0.75rem 1.8rem;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 3rem;
+    background-color: var(--very-light-gray);
+}
+.card button:hover{
+    cursor: pointer;
+}
+.card button:active{
+    border: 2px solid var(--very-light-gray);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+/* Fix bakcground properties */
+.bright-orange-bg{
+    background-color: var(--bright-orange);
+}
+
+.dark-cyan-bg{
+    background-color: var(--dark-cyan);
+}
+
+.very-dark-cyan-bg{
+    background-color: var(--very-dark-cyan);
+}
+
+.very-light-gray-bg{
+    background-color: var(--very-light-gray);
+}
+
+.attribution{
+    text-align: center;
+}
